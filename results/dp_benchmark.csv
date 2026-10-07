@@ -1,0 +1,31 @@
+cycle,strategy,l_per_100km_dp_priced,l_per_100km_raw,pct_above_dp,share_of_achievable_saving_captured_pct,soc_end,regen_share_of_braking,engine_on_fraction,engine_starts,mean_engine_eff_when_on,dp_shadow_price,ecms_s0,rule_soc_target
+urban,ICE-only baseline,9.0355,9.0355,117.87,0.0,,,0.786,0,0.25,,,
+urban,Hybrid: rule-based,4.2341,4.4355,2.1,98.2,0.569,0.845,0.167,14,0.34,,,
+urban,Hybrid: rule-based (tuned),4.2583,4.2962,2.68,97.7,0.554,0.845,0.167,14,0.338,,,0.534
+urban,Hybrid: ECMS (tuned),4.29,4.2397,3.45,97.1,0.545,0.845,0.06,14,0.367,,2.955,
+urban,Hybrid: ECMS (fixed s0),4.2395,3.2727,2.23,98.1,0.458,0.845,0.046,11,0.367,,2.8,
+urban,Hybrid: DP (global optimum),4.1471,4.1329,0.0,100.0,0.549,0.845,0.121,15,0.353,2.698,,
+suburban,ICE-only baseline,5.7329,5.7329,69.09,0.0,,,0.814,0,0.266,,,
+suburban,Hybrid: rule-based,4.0832,4.2311,20.44,70.4,0.574,0.839,0.505,6,0.288,,,
+suburban,Hybrid: rule-based (tuned),4.1033,4.1094,21.03,69.6,0.551,0.839,0.505,6,0.284,,,0.527
+suburban,Hybrid: ECMS (tuned),3.5478,3.5822,4.65,93.3,0.556,0.839,0.108,6,0.367,,2.913,
+suburban,Hybrid: ECMS (fixed s0),3.4435,2.8131,1.57,97.7,0.446,0.839,0.076,6,0.367,,2.8,
+suburban,Hybrid: DP (global optimum),3.3903,3.4012,0.0,100.0,0.552,0.839,0.129,7,0.364,2.762,,
+highway,ICE-only baseline,5.6449,5.6449,4.04,0.0,,,0.933,0,0.34,,,
+highway,Hybrid: rule-based,5.5269,5.6374,1.86,53.8,0.616,0.849,0.917,3,0.34,,,
+highway,Hybrid: rule-based (tuned),5.5404,5.5467,2.11,47.7,0.554,0.849,0.917,3,0.34,,,0.488
+highway,Hybrid: ECMS (tuned),5.4435,5.4451,0.33,91.9,0.551,0.849,0.676,3,0.354,,2.773,
+highway,Hybrid: ECMS (fixed s0),5.443,5.4641,0.32,92.1,0.563,0.849,0.677,3,0.354,,2.8,
+highway,Hybrid: DP (global optimum),5.4258,5.4229,0.0,100.0,0.548,0.849,0.678,4,0.354,2.71,,
+mixed,ICE-only baseline,5.9112,5.9112,20.42,0.0,,,0.865,0,0.315,,,
+mixed,Hybrid: rule-based,5.1477,5.2028,4.87,76.2,0.596,0.843,0.632,18,0.331,,,
+mixed,Hybrid: rule-based (tuned),5.1572,5.1558,5.06,75.2,0.549,0.843,0.632,18,0.33,,,0.503
+mixed,Hybrid: ECMS (tuned),4.9777,4.9865,1.41,93.1,0.557,0.843,0.373,18,0.356,,2.918,
+mixed,Hybrid: ECMS (fixed s0),4.9395,4.8872,0.63,96.9,0.507,0.843,0.361,13,0.356,,2.8,
+mixed,Hybrid: DP (global optimum),4.9087,4.9078,0.0,100.0,0.549,0.843,0.382,18,0.356,2.711,,
+aggressive,ICE-only baseline,14.3072,14.3072,30.22,0.0,,,0.716,0,0.356,,,
+aggressive,Hybrid: rule-based,11.3089,11.9416,2.93,90.3,0.654,0.472,0.597,10,0.354,,,
+aggressive,Hybrid: rule-based (tuned),11.3362,11.3059,3.18,89.5,0.545,0.472,0.597,10,0.353,,,0.441
+aggressive,Hybrid: ECMS (tuned),10.9744,10.9698,-0.12,100.4,0.549,0.472,0.328,10,0.364,,2.477,
+aggressive,Hybrid: ECMS (fixed s0),11.0526,12.0782,0.6,98.0,0.719,0.472,0.373,10,0.363,,2.8,
+aggressive,Hybrid: DP (global optimum),10.9871,10.986,0.0,100.0,0.55,0.472,0.346,11,0.364,2.455,,
