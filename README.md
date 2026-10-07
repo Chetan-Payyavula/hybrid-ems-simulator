@@ -1,5 +1,7 @@
 # Hybrid Energy-Management Simulator
 
+Built with AI assistance (Claude); results reproduced and verified by the author.
+
 A quasi-static, backward-facing simulator for the petrol turbo-hybrid in
 *Petrol_Turbo_Hybrid_Full_Report.docx*. It answers: **given a driving cycle, how should the engine and the
 MGU-K share the load, and what does that do to fuel use, range and top speed?** A dynamic-programming (DP)
@@ -66,6 +68,8 @@ Fuel is SOC-corrected: leftover battery energy is converted to equivalent fuel a
 | Highest steady speed that still gives 500 km on 47 L | 176 km/h |
 | Range at steady 200 / 240 km/h | 399 / 277 km |
 
+   ![Range vs steady speed](results/fig3_range_vs_speed.png)
+
 ### What this says about the report's claims
 
 1. **280 km/h and 500 km are two different operating points, not one.** 500 km holds up to ~176 km/h steady.
@@ -93,6 +97,8 @@ with extra charge. "Gap" = fuel above the DP optimum.
 | mixed | 4.91 | +4.9 % | +1.4 % | +0.6 % | 0.51 |
 | aggressive | 10.99 | +2.9 % | -0.1 % (noise) | +0.6 % | 0.72 |
 
+   ![Gap to the global optimum](results/fig5_dp_gap.png)
+
 ### What the benchmark says
 
 1. **ECMS is already close to optimal in this model**: it captures 92-100 % of the achievable hybrid saving, within
@@ -113,7 +119,7 @@ with extra charge. "Gap" = fuel above the DP optimum.
    against fixed-s0 ECMS about 2 % or less. The value of reinforcement learning here would be generalising without per-cycle
    tuning and on real cycles, not beating ECMS by a large margin.
 
-## Corrections since the first version
+## Design note: SOC exchange rate
 
 - **SOC exchange rate changed from 0.30 to 0.37 (3.3 -> 2.7 J of fuel per J stored).** The DP showed that my original
   constant over-credited runs that finished with extra charge. This raised the rule-based numbers by 0.2-1.5 % (it
@@ -160,10 +166,4 @@ with extra charge. "Gap" = fuel above the DP optimum.
 4. Train a reinforcement-learning agent and measure it against both ECMS and the DP bound.
 5. Port the vehicle and battery models to Simulink (relevant to the Simulation Software Engineer role).
 
-## Resume wording (accurate to what exists)
 
-> Built a quasi-static hybrid energy-management simulator in Python (road-load physics, Willans-line engine,
-> battery equivalent circuit, MGU-K/MGU-H) comparing ICE-only, rule-based and ECMS control across drive cycles, and
-> implemented a dynamic-programming global optimum as a benchmark (tuned ECMS within 0.3-4.7 % of optimal).
-> Quantified burst top speed, range versus speed, and sensitivity of fuel savings to regen, battery, motor and
-> MGU-H assumptions. Verified with 26 automated checks; not yet validated against vehicle data.
